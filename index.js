@@ -206,7 +206,7 @@ app.get("/id", (req, res) => {
     const email = req.body.email
     console.log("Email")
     console.log(email)
-    db.query("SELECT userid FROM signup where email=?",[email], (err, result) => {
+    db.query("SELECT * FROM signup where email=?",[email], (err, result) => {
         console.log(result);
         res.send(result);
     });
